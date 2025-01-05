@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2025 1:42:12 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-VI8REUP"
+  DTS:CreatorName="DESKTOP-VI8REUP\DELL 3515"
+  DTS:DTSID="{EEFF4113-5E9C-4024-A236-B0EE23BBCA27}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{0A5B9444-E62C-4B08-B931-85550A4E5454}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceDim_Fact]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+      DTS:ObjectName="SourceDim_Fact">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Create DimCustomer"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d77cf3fd-6eb5-4307-9718-7e8c9a56590a}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create DimCustomer"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+          SQLTask:SqlStatementSource="CREATE TABLE DimCustomer (&#xA;    CustomerKey INT IDENTITY(1,1) NOT NULL,&#xA;    Row_ID INT NULL,&#xA;    Customer_ID NVARCHAR(MAX) NULL,&#xA;    Customer_Name NVARCHAR(MAX) NULL,&#xA;    Segment NVARCHAR(MAX) NULL,&#xA;    City NVARCHAR(MAX) NULL,&#xA;    State NVARCHAR(MAX) NULL,&#xA;    Country NVARCHAR(MAX) NULL,&#xA;    Postal_Code INT NULL,&#xA;    Market NVARCHAR(MAX) NULL,&#xA;    Region NVARCHAR(MAX) NULL&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create DimProduct"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{55c03a0f-f076-4824-8109-903584c19d07}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create DimProduct"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+          SQLTask:SqlStatementSource="Create Table DimProduct(&#xA;&#x9;ProductKey int IDENTITY(1,1) NOT NULL,&#xA;&#x9;Row_ID int NULL,&#xA;&#x9;Product_ID nvarchar(max)  NULL,&#xA;&#x9;Category nvarchar(max)  NULL,&#xA;&#x9;Sub_Category nvarchar(max)  NULL,&#xA;&#x9;Product_Name nvarchar(max)  NULL&#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create DimShipping"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{70AFC2BD-B0A0-443C-986A-08ED14E7F511}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create DimShipping"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+          SQLTask:SqlStatementSource="CREATE Table DimShipping(&#xA;&#x9;ShippingKey INT IDENTITY(1,1) NOT NULL,&#xA;&#x9;Row_ID int NULL,&#xA;&#x9;Order_ID nvarchar(max)  NULL,&#xA;&#x9;Order_Date date  NULL,&#xA;&#x9;Ship_Date date  NULL,&#xA;&#x9;Ship_Mode nvarchar(max)  NULL,&#xA;&#x9;Order_Priority nvarchar(max)  NULL&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create FactSales"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a65337be-138c-403e-9190-d1d386e8d65e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create FactSales"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+          SQLTask:SqlStatementSource="CREATE TABLE FactSales (&#xA;    FactSalesKey INT IDENTITY(1,1) NOT NULL,&#xA;    ShippingKey INT NULL,&#xA;    CustomerKey INT NULL,&#xA;    ProductKey INT NULL,&#xA;    Row_ID INT NULL,&#xA;    Sales FLOAT NULL,&#xA;    Quantity INT NULL,&#xA;    Discount FLOAT NULL,&#xA;    Profit FLOAT NULL,&#xA;    Shipping_Cost FLOAT NULL&#xA;);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C00DF4F9-CCF2-42A8-BEFB-85679E96448B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1FC5AE2F-579E-4C9C-B120-EDB9BACA36CF}"
+          SQLTask:SqlStatementSource="IF OBJECT_ID('dbo.DimShipping', 'U') IS NOT NULL&#xA;DROP TABLE dbo.DimShipping;&#xA;&#xA;IF OBJECT_ID('dbo.DimCustomer', 'U') IS NOT NULL&#xA;DROP TABLE dbo.DimCustomer;&#xA;&#xA;IF OBJECT_ID('dbo.DimProduct', 'U') IS NOT NULL&#xA;DROP TABLE dbo.DimProduct;&#xA;&#xA;IF OBJECT_ID('dbo.FactSales', 'U') IS NOT NULL&#xA;DROP TABLE dbo.FactSales;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{94A84BC7-3AA0-4EBA-9F16-B4F00C9B0C3D}"
+      DTS:From="Package\Delete Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Create DimShipping" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D4180C34-47C3-4D3A-907F-C305FF0F7746}"
+      DTS:From="Package\Create DimShipping"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Create DimProduct" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{B56C4605-B089-413E-AE09-072CA7EB97D3}"
+      DTS:From="Package\Create DimProduct"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Create DimCustomer" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{11EE7B79-20B2-4DFF-AE55-AFF0277E8DF0}"
+      DTS:From="Package\Create DimCustomer"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Create FactSales" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\Delete Tables"
+          TopLeft="100.833327824043,59.7999995841583" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Create DimShipping"
+          TopLeft="97.499994672835,136.933332381116" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Create DimProduct"
+          TopLeft="100.833327824043,207.999998553594" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Create DimCustomer"
+          TopLeft="95.833328097231,289.666665358875" />
+        <NodeLayout
+          Size="176,41.6"
+          Id="Package\Create FactSales"
+          TopLeft="106.666660838657,369.599998842875" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="172.033327824043,101.399999584158">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.066666848792,35.5333327969578"
+              Start="0,0"
+              End="11.066666848792,28.0333327969578">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.7666663984789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.7666663984789"
+                    Point2="0,17.7666663984789"
+                    Point3="4,17.7666663984789" />
+                  <mssgle:LineSegment
+                    End="7.06666684879198,17.7666663984789" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.06666684879198,17.7666663984789"
+                    Point2="11.066666848792,17.7666663984789"
+                    Point3="11.066666848792,21.7666663984789" />
+                  <mssgle:LineSegment
+                    End="11.066666848792,28.0333327969578" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="184.766661248439,178.533332381116">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4666661724779"
+              Start="0,0"
+              End="0,21.9666661724779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9666661724779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="185.133327960637,249.599998553594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0666668052806"
+              Start="0,0"
+              End="0,32.5666668052806">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5666668052806" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="183.833328097231,331.266665358875">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.8333327414261,38.3333334840006"
+              Start="0,0"
+              End="10.8333327414261,30.8333334840006">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.1666667420003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.1666667420003"
+                    Point2="0,19.1666667420003"
+                    Point3="4,19.1666667420003" />
+                  <mssgle:LineSegment
+                    End="6.83333274142612,19.1666667420003" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.83333274142612,19.1666667420003"
+                    Point2="10.8333327414261,19.1666667420003"
+                    Point3="10.8333327414261,23.1666667420003" />
+                  <mssgle:LineSegment
+                    End="10.8333327414261,30.8333334840006" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

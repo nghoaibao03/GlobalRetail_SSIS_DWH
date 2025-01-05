@@ -1,0 +1,945 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2025 3:39:37 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-VI8REUP"
+  DTS:CreatorName="DESKTOP-VI8REUP\DELL 3515"
+  DTS:DTSID="{960F22DE-FE81-4308-8C92-5368E0A93576}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{BEDB085A-6395-42F1-B5C7-63220D65515F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[detination]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B7427253-0D17-492A-8CEE-2C6B335083A7}"
+      DTS:ObjectName="detination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{47AE8959-D470-4222-8AE2-79F51BEED848}"
+      DTS:ObjectName="source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3F4A18CC-4D52-437D-AE99-62DABF19D9FA}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Fact Sales"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Fact Sales"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[FactSales]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Fact Sales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[detination]"
+                  connectionManagerRefId="Package.ConnectionManagers[detination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[ShippingKey]"
+                      cachedDataType="i4"
+                      cachedName="ShippingKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[ShippingKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ShippingKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[CustomerKey]"
+                      cachedDataType="i4"
+                      cachedName="CustomerKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[CustomerKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Row_ID]"
+                      cachedDataType="i4"
+                      cachedName="Row_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Sales]"
+                      cachedDataType="r8"
+                      cachedName="Sales"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Sales]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Discount]"
+                      cachedDataType="r8"
+                      cachedName="Discount"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Discount]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Profit]"
+                      cachedDataType="r8"
+                      cachedName="Profit"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Profit]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].Columns[Shipping_Cost]"
+                      cachedDataType="r8"
+                      cachedName="Shipping_Cost"
+                      externalMetadataColumnId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Shipping_Cost]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Shipping_Cost]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[FactSalesKey]"
+                      dataType="i4"
+                      name="FactSalesKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      dataType="r8"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Profit]"
+                      dataType="r8"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input].ExternalColumns[Shipping_Cost]"
+                      dataType="r8"
+                      name="Shipping_Cost" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Fact Sales.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Fact Sales.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Fact Sales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Fact Sales.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\STG_Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STG_Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StageGlobalRetail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\STG_Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      name="StageKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      name="ShippingKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      name="Row_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      name="Order_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      name="Order_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      name="Ship_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      name="Ship_Mode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      name="Customer_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      name="Customer_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Segment]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Segment]"
+                      name="Segment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      name="Postal_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Market]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Market]"
+                      name="Market"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Region]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      name="Product_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      name="Sub_Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      name="Product_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      name="Order_Priority"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      dataType="i4"
+                      name="StageKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      dataType="nText"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      dataType="dbDate"
+                      name="Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      dataType="dbDate"
+                      name="Ship_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      dataType="nText"
+                      name="Ship_Mode" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      dataType="nText"
+                      name="Customer_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      dataType="nText"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      dataType="nText"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      dataType="i4"
+                      name="Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      dataType="nText"
+                      name="Market" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      dataType="nText"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      dataType="nText"
+                      name="Product_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      dataType="nText"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      dataType="nText"
+                      name="Sub_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      dataType="nText"
+                      name="Product_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      dataType="r8"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="r8"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      dataType="r8"
+                      name="Shipping_Cost" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      dataType="nText"
+                      name="Order_Priority" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      name="StageKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      name="ShippingKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      name="CustomerKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      name="Row_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      name="Order_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      name="Order_Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      name="Ship_Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      name="Ship_Mode" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      name="Customer_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      name="Customer_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      name="Segment" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      name="Postal_Code" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      name="Market" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      name="Product_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      name="Sub_Category" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      name="Product_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      name="Sales" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      name="Discount" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      name="Order_Priority" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Fact Sales.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\STG_Table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Data Flow Task"
+          TopLeft="238.333320311375,139.533332363036" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="127.2,41.6"
+          Id="Package\Data Flow Task\Fact Sales"
+          TopLeft="254.999986067414,175.066665449275" />
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\Data Flow Task\STG_Table"
+          TopLeft="255.833319355217,85.7999994033575" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="320.016652711316,127.399999403358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.6666660459173"
+              Start="0,0"
+              End="0,40.1666660459173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.1666660459173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Fact Sales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\STG_Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

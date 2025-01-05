@@ -1,0 +1,2633 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/5/2025 2:15:51 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-VI8REUP"
+  DTS:CreatorName="DESKTOP-VI8REUP\DELL 3515"
+  DTS:DTSID="{177BA4F9-C22F-4E9A-BA7A-A62D05E11389}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{8962CD56-D954-44CB-8EDE-6D1751F9686F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3EBBBB12-0134-4970-86D0-F0312CC5C667}"
+      DTS:ObjectName="DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{84F90947-B0F5-4705-9A80-DFDCFBD4E9DD}"
+      DTS:ObjectName="DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 2]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C1F780B3-09B7-4231-B733-0D2CA96DDE0B}"
+      DTS:ObjectName="DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 2">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 3]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0987C522-E229-4D29-A191-40720E547ED9}"
+      DTS:ObjectName="DESKTOP-VI8REUP\MSSQLSER2019.GlobalRetail_DW 3">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[destination]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16CD940B-44F2-40E5-982F-F1F56EBBFEDD}"
+      DTS:ObjectName="destination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[source]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{150D506B-273E-4485-91E6-756C8C4EE535}"
+      DTS:ObjectName="source">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\MSSQLSER2019;Initial Catalog=GlobalRetail_DW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ETL Dim Tables"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A4BCD452-500C-49FE-9019-BA05D9338E32}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ETL Dim Tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\ETL Dim Tables\DimCustomer"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimCustomer"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimCustomer]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\DimCustomer.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[destination]"
+                  connectionManagerRefId="Package.ConnectionManagers[destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Row_ID]"
+                      cachedDataType="i4"
+                      cachedName="Row_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Customer_ID]"
+                      cachedDataType="nText"
+                      cachedName="Customer_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Customer_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Segment]"
+                      cachedDataType="nText"
+                      cachedName="Segment"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Segment]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Segment]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[City]"
+                      cachedDataType="nText"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[State]"
+                      cachedDataType="nText"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Country]"
+                      cachedDataType="nText"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Postal_Code]"
+                      cachedDataType="i4"
+                      cachedName="Postal_Code"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Postal_Code]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Postal_Code]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Market]"
+                      cachedDataType="nText"
+                      cachedName="Market"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Market]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Market]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Region]"
+                      cachedDataType="nText"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].Columns[Order_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Order_Date"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Customer_ID]"
+                      dataType="nText"
+                      name="Customer_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Customer_Name]"
+                      dataType="nText"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Segment]"
+                      dataType="nText"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Postal_Code]"
+                      dataType="i4"
+                      name="Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Market]"
+                      dataType="nText"
+                      name="Market" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Region]"
+                      dataType="nText"
+                      name="Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\DimCustomer.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Dim Tables\DimProduct"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimProduct"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimProduct]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\DimProduct.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].Columns[Row_ID]"
+                      cachedDataType="i4"
+                      cachedName="Row_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Row_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].Columns[Product_ID]"
+                      cachedDataType="nText"
+                      cachedName="Product_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].Columns[Category]"
+                      cachedDataType="nText"
+                      cachedName="Category"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Category]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].Columns[Sub_Category]"
+                      cachedDataType="nText"
+                      cachedName="Sub_Category"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Sub_Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Sub_Category]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].Columns[Product_Name]"
+                      cachedDataType="nText"
+                      cachedName="Product_Name"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Product_ID]"
+                      dataType="nText"
+                      name="Product_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Category]"
+                      dataType="nText"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Sub_Category]"
+                      dataType="nText"
+                      name="Sub_Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name]"
+                      dataType="nText"
+                      name="Product_Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\DimProduct.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimProduct.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Dim Tables\DimShipping"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DimShipping"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DimShipping]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\DimShipping.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[destination]"
+                  connectionManagerRefId="Package.ConnectionManagers[destination]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Row_ID]"
+                      cachedDataType="i4"
+                      cachedName="Row_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Row_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Order_ID]"
+                      cachedDataType="nText"
+                      cachedName="Order_ID"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_ID]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Order_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Order_Date"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Date]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Ship_Date]"
+                      cachedDataType="dbDate"
+                      cachedName="Ship_Date"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Date]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Ship_Mode]"
+                      cachedDataType="nText"
+                      cachedName="Ship_Mode"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Mode]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Mode]" />
+                    <inputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].Columns[Order_Priority]"
+                      cachedDataType="nText"
+                      cachedName="Order_Priority"
+                      externalMetadataColumnId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_Priority]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Priority]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_ID]"
+                      dataType="nText"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_Date]"
+                      dataType="dbDate"
+                      name="Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Date]"
+                      dataType="dbDate"
+                      name="Ship_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Ship_Mode]"
+                      dataType="nText"
+                      name="Ship_Mode" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input].ExternalColumns[Order_Priority]"
+                      dataType="nText"
+                      name="Order_Priority" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\DimShipping.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimShipping.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\DimShipping.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\DimShipping.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Dim Tables\STG_Table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STG_Table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StageGlobalRetail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\STG_Table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      name="StageKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      name="ShippingKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      name="Row_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      name="Order_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      name="Order_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      name="Ship_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      name="Ship_Mode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      name="Customer_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      name="Customer_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Segment]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Segment]"
+                      name="Segment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      name="Postal_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Market]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Market]"
+                      name="Market"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Region]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      name="Product_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      name="Sub_Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      name="Product_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      name="Order_Priority"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      dataType="i4"
+                      name="StageKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      dataType="nText"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      dataType="dbDate"
+                      name="Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      dataType="dbDate"
+                      name="Ship_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      dataType="nText"
+                      name="Ship_Mode" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      dataType="nText"
+                      name="Customer_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      dataType="nText"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      dataType="nText"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      dataType="i4"
+                      name="Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      dataType="nText"
+                      name="Market" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      dataType="nText"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      dataType="nText"
+                      name="Product_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      dataType="nText"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      dataType="nText"
+                      name="Sub_Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      dataType="nText"
+                      name="Product_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      dataType="r8"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="r8"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      dataType="r8"
+                      name="Shipping_Cost" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      dataType="nText"
+                      name="Order_Priority" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      name="StageKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      name="ShippingKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      name="CustomerKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      name="Row_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      name="Order_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      name="Order_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      name="Ship_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      name="Ship_Mode" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      name="Customer_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      name="Customer_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      name="Segment" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      name="Postal_Code" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      name="Market" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      name="Product_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      name="Sub_Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      name="Product_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      name="Sales" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      name="Discount" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      name="Order_Priority" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Dim Tables\STG_Table1"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STG_Table1"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StageGlobalRetail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\STG_Table1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      name="StageKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      name="ShippingKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      name="Row_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      name="Order_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      name="Order_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      name="Ship_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      name="Ship_Mode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      name="Customer_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      name="Customer_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Segment]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Segment]"
+                      name="Segment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      name="Postal_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Market]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Market]"
+                      name="Market"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Region]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      name="Product_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      name="Sub_Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      name="Product_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      name="Order_Priority"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      dataType="i4"
+                      name="StageKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      dataType="nText"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      dataType="dbDate"
+                      name="Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      dataType="dbDate"
+                      name="Ship_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      dataType="nText"
+                      name="Ship_Mode" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      dataType="nText"
+                      name="Customer_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      dataType="nText"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      dataType="nText"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      dataType="i4"
+                      name="Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      dataType="nText"
+                      name="Market" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      dataType="nText"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      dataType="nText"
+                      name="Product_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      dataType="nText"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      dataType="nText"
+                      name="Sub_Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      dataType="nText"
+                      name="Product_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      dataType="r8"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="r8"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      dataType="r8"
+                      name="Shipping_Cost" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      dataType="nText"
+                      name="Order_Priority" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      name="StageKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      name="ShippingKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      name="CustomerKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      name="Row_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      name="Order_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      name="Order_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      name="Ship_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      name="Ship_Mode" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      name="Customer_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      name="Customer_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      name="Segment" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      name="Postal_Code" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      name="Market" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      name="Product_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      name="Sub_Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      name="Product_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      name="Sales" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      name="Discount" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      name="Order_Priority" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\ETL Dim Tables\STG_Table2"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="STG_Table2"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[StageGlobalRetail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\ETL Dim Tables\STG_Table2.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[source]"
+                  connectionManagerRefId="Package.ConnectionManagers[source]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[StageKey]"
+                      name="StageKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[ShippingKey]"
+                      name="ShippingKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[CustomerKey]"
+                      name="CustomerKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Row_ID]"
+                      name="Row_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_ID]"
+                      name="Order_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Date]"
+                      name="Order_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Date]"
+                      name="Ship_Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Ship_Mode]"
+                      name="Ship_Mode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Customer_ID]"
+                      name="Customer_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Customer_Name]"
+                      name="Customer_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Segment]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Segment]"
+                      name="Segment"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[City]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[State]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Country]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Postal_Code]"
+                      name="Postal_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Market]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Market]"
+                      name="Market"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Region]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Product_ID]"
+                      name="Product_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Category]"
+                      name="Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Sub_Category]"
+                      name="Sub_Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Product_Name]"
+                      name="Product_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Sales]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Sales]"
+                      name="Sales"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Discount]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Discount]"
+                      name="Discount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Profit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Profit]"
+                      name="Profit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].Columns[Order_Priority]"
+                      name="Order_Priority"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[StageKey]"
+                      dataType="i4"
+                      name="StageKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[ShippingKey]"
+                      dataType="i4"
+                      name="ShippingKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[CustomerKey]"
+                      dataType="i4"
+                      name="CustomerKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Row_ID]"
+                      dataType="i4"
+                      name="Row_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_ID]"
+                      dataType="nText"
+                      name="Order_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_Date]"
+                      dataType="dbDate"
+                      name="Order_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Ship_Date]"
+                      dataType="dbDate"
+                      name="Ship_Date" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Ship_Mode]"
+                      dataType="nText"
+                      name="Ship_Mode" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Customer_ID]"
+                      dataType="nText"
+                      name="Customer_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Customer_Name]"
+                      dataType="nText"
+                      name="Customer_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Segment]"
+                      dataType="nText"
+                      name="Segment" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      dataType="nText"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      dataType="nText"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      dataType="nText"
+                      name="Country" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code]"
+                      dataType="i4"
+                      name="Postal_Code" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Market]"
+                      dataType="nText"
+                      name="Market" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Region]"
+                      dataType="nText"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Product_ID]"
+                      dataType="nText"
+                      name="Product_ID" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Category]"
+                      dataType="nText"
+                      name="Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Sub_Category]"
+                      dataType="nText"
+                      name="Sub_Category" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Product_Name]"
+                      dataType="nText"
+                      name="Product_Name" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Sales]"
+                      dataType="r8"
+                      name="Sales" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Quantity]"
+                      dataType="i4"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      dataType="r8"
+                      name="Discount" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Profit]"
+                      dataType="r8"
+                      name="Profit" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Shipping_Cost]"
+                      dataType="r8"
+                      name="Shipping_Cost" />
+                    <externalMetadataColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output].ExternalColumns[Order_Priority]"
+                      dataType="nText"
+                      name="Order_Priority" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[StageKey]"
+                      name="StageKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ShippingKey]"
+                      name="ShippingKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[CustomerKey]"
+                      name="CustomerKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Row_ID]"
+                      name="Row_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_ID]"
+                      name="Order_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_Date]"
+                      name="Order_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      dataType="dbDate"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Ship_Date]"
+                      name="Ship_Date" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Ship_Mode]"
+                      name="Ship_Mode" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Customer_ID]"
+                      name="Customer_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Customer_Name]"
+                      name="Customer_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Segment]"
+                      name="Segment" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[City]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[State]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Postal_Code]"
+                      name="Postal_Code" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Market]"
+                      name="Market" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Product_ID]"
+                      name="Product_ID" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Category]"
+                      name="Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Sub_Category]"
+                      name="Sub_Category" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Product_Name]"
+                      name="Product_Name" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Sales]"
+                      name="Sales" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Quantity]"
+                      name="Quantity" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      name="Discount" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Profit]"
+                      name="Profit" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      dataType="r8"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Shipping_Cost]"
+                      name="Shipping_Cost" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      dataType="nText"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[Order_Priority]"
+                      name="Order_Priority" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\ETL Dim Tables.Paths[OLE DB Source Output]"
+              endId="Package\ETL Dim Tables\DimCustomer.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL Dim Tables\STG_Table.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ETL Dim Tables.Paths[OLE DB Source Output1]"
+              endId="Package\ETL Dim Tables\DimProduct.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL Dim Tables\STG_Table1.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\ETL Dim Tables.Paths[OLE DB Source Output2]"
+              endId="Package\ETL Dim Tables\DimShipping.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\ETL Dim Tables\STG_Table2.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="152.8,41.6"
+          Id="Package\ETL Dim Tables"
+          TopLeft="189.999989618858,84.0666660820776" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ETL Dim Tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131.2,41.6"
+          Id="Package\ETL Dim Tables\STG_Table"
+          TopLeft="359.166647042666,50.2666663171185" />
+        <NodeLayout
+          Size="142.4,41.6"
+          Id="Package\ETL Dim Tables\DimCustomer"
+          TopLeft="357.499980467062,143.866665666236" />
+        <EdgeLayout
+          Id="Package\ETL Dim Tables.Paths[OLE DB Source Output]"
+          TopLeft="426.733313754864,91.8666663171185">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9999993491173"
+              Start="0,0"
+              End="0,44.4999993491173">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4999993491173" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132.8,41.6"
+          Id="Package\ETL Dim Tables\DimProduct"
+          TopLeft="614.999966397883,149.066665630076" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\ETL Dim Tables\STG_Table1"
+          TopLeft="604.999966944259,48.5333329958386" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\ETL Dim Tables\DimShipping"
+          TopLeft="849.166620270248,147.333332308796" />
+        <NodeLayout
+          Size="137.6,41.6"
+          Id="Package\ETL Dim Tables\STG_Table2"
+          TopLeft="852.499953421456,47.6666663351986" />
+        <EdgeLayout
+          Id="Package\ETL Dim Tables.Paths[OLE DB Source Output1]"
+          TopLeft="677.599966671071,90.1333329958386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.9333326342371"
+              Start="0,0"
+              End="0,51.4333326342371">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.4333326342371" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ETL Dim Tables.Paths[OLE DB Source Output2]"
+          TopLeft="919.633286845852,89.2666663351986">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.0666659735971"
+              Start="0,0"
+              End="0,50.5666659735971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5666659735971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\STG_Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\DimCustomer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\DimProduct">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\STG_Table1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\DimShipping">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ETL Dim Tables\STG_Table2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

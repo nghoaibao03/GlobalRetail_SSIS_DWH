@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DESKTOP-VI8REUP_SQL2022.GlobalRetailDW"
+  DTS:DTSID="{0820DD83-E559-4A7F-AC26-7D7CBCDD8594}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=DESKTOP-VI8REUP\SQL2022;Initial Catalog=GlobalRetailDW;Provider=SQLNCLIRDA11.1;Integrated Security=SSPI;Application Name=SSIS-GlobalRetail_SSIS_DWH-{0820DD83-E559-4A7F-AC26-7D7CBCDD8594}DESKTOP-VI8REUP\SQL2022.GlobalRetailDW;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
